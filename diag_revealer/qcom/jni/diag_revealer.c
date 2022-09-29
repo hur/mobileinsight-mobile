@@ -868,7 +868,7 @@ enable_logging (int fd, int mode)
 
     ssize_t arglen = probe_ioctl_arglen(DIAG_IOCTL_SWITCH_LOGGING, sizeof(struct diag_logging_mode_param_t_q));
     
-    if (strstr(board_name, "lito") != NULL && strstr(system_version, "11") != NULL){
+    if (strstr(board_name, "lito") != NULL && (strstr(system_version, "11") != NULL || strstr(system_version, "12") != NULL)){
     	printf("MATCHED.\n");
     	/* Android 11.0.0 (RD1A.201105.003.C1)
 		 * Reference:
